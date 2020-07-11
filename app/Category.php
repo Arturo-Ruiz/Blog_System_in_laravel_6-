@@ -13,11 +13,11 @@ class Category extends Model
 
 
     //Mediante esta funcion le digo a Laravel que existe una relacion de categorias y posts
-    //La relacion es de tipo muchos a muchos
-    //Con BelongsToMany Le digo que una categoria puede tener muchos posts
+    //La relacion es de tipo uno a muchos
+    //Con Hasmany Le digo que una categoria puede tener muchos posts
     //la clase entre Parentesis
     public function posts(){
-        return $this->belongsToMany(Post::class);
+        return $this->hasMany(Post::class);
     }
 
 
