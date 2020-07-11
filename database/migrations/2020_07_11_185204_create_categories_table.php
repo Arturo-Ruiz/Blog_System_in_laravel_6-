@@ -15,6 +15,15 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('name', 64);
+            //Los Campos Unicos deben tener una longitud para seguir el estandar
+            //Al crear un campo unico lo que quiero decir es que su contenido no se puede repetir en esta tabla
+            $table->string('slug', 128)->unique;
+            //Los Cambos Nullables Quiere decir que este campo es opcional se puede agregar o no
+            //Si no se agrega no hay problema ni afecta en nada
+            $table->mediumText('body')->nullable();
+
             $table->timestamps();
         });
     }
