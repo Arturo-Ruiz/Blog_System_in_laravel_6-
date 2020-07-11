@@ -6,7 +6,7 @@ use App\Model;
 use Faker\Generator as Faker;
 
 $factory->define(App\Post::class, function (Faker $faker) {
-    $title = $faker -> setence(4);
+    $title = $faker -> sentence(4);
     return [
         'user_id' => rand(1,30),
         'category_id' => rand(1,20),
