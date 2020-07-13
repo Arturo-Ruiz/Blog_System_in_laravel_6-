@@ -18,7 +18,7 @@ class Post extends Model
     }
 
     public function category(){
-        return $this->belongsTo(Category::tag);
+        return $this->belongsTo(Category::class);
     }
 
     //Mediante esta funcion le digo a Laravel que existe una relacion de post y etiquetas

@@ -7,27 +7,35 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-8">
-                <h1 class="text-center">Lista de Artículos</h1>
-                @foreach ($posts as $post)
+                <h1 class="text-center">{{$post->name}}</h1>
                     <div class="card">
                         <div class="card-header">
-                         <p class="text-center"> <b>{{$post->name}}</b> </p>
+                         <p class="text-center">Categoria:
+                            <a href="#">{{$post->category->name}}</a>
+                        </p>
                         </div>
                         <div class="card-body">
                         @if ($post->file)
                             <img class="img-fluid" src="{{$post->file}}" alt="Imagen del Post">
                         @endif
                         <p class="text-center">
+                            <br>
                             {{$post->excerpt}}
                             <br>
                             <br>
-                            <a href="{{route('post', $post->slug)}}" class="btn btn-primary">Leer Más</a>
+                            <hr>
+                            {!! $post->body !!}
+                            <hr>
+                        </p>
+                        <p class="text-center">
+                            Etiquetas
+                            @foreach ($post->tags as $tag)
+                                <a href="#">{{$tag->name}}</a>
+                            @endforeach
                         </p>
                         </div>
                     </div>
                     <br>
-                @endforeach
-                {{$posts->render()}}
             </div>
             <div class="col-md-2">
 
