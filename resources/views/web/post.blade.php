@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="card-header">
                          <p class="text-center">Categoria:
-                            <a href="#">{{$post->category->name}}</a>
+                         <a href="{{route('category', $post->category->slug)}}">{{$post->category->name}}</a>
                         </p>
                         </div>
                         <div class="card-body">
@@ -30,7 +30,7 @@
                         <p class="text-center">
                             Etiquetas
                             @foreach ($post->tags as $tag)
-                                <a href="#">{{$tag->name}}</a>
+                            <a href="{{route('tag', $tag->slug)}}">{{$tag->name}}</a>
                             @endforeach
                         </p>
                         </div>

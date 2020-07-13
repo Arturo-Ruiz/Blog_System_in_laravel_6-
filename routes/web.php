@@ -17,6 +17,13 @@ Route::redirect('/', 'blog');
 
 Auth::routes();
 
-Route::get('/blog', 'Web\PageController@blog')->name('blog');
 
-Route::get('blog/{slug}', 'Web\PageController@post')->name('post');
+//WEB
+Route::get('/blog', 'Web\PageController@blog')->name('blog');
+Route::get('entradas/{slug}', 'Web\PageController@post')->name('post');
+Route::get('categorias/{slug}', 'Web\PageController@category')->name('category');
+Route::get('etiquetas/{slug}', 'Web\PageController@tag')->name('tag');
+
+
+
+
